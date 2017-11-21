@@ -7,10 +7,8 @@
           <fieldset>
             <div>
               <h2>{{question}}</h2>
-              <input id="toggle-on" name="toggle" type="radio" value="yes" v-model="picked">
-              <label for="toggle-on">Yes</label>
-              <input id="toggle-off" name="toggle" type="radio" value="no" v-model="picked">
-              <label for="toggle-off">No</label>
+              <button v-on:click="check" data="yes">Yes</button>
+              <button v-on:click="check" data="no">No</button>
               {{picked}}
             </div>
           </fieldset>
@@ -25,38 +23,49 @@
 import questions from '../assets/data/questions.json'
 
 export default {
-  name: 'Form',
+  name: 'Button',
   data () {
     return {
       arr: questions,
       picked: null,
-      question: questions[0].question,
-      yes: questions[0].yes,
-      no: questions[0].no,
-      answers: []
+      question: questions[0].question
+    }
+  },
+  computed: {
+    getQuestion () {
+      return this.href === this.$root.currentRoute
     }
   },
   methods: {
-    getQ (id, answer) {
-      this.yes = questions[id].yes
-      this.no = questions[id].no
-      this.question = questions[id].question
-      this.picked = null
-      this.answers.push(answer)
-    }
-  },
-  watch: {
-    'picked': function (val) {
-      console.log(this.answers)
-      if (val === 'yes') {
-        this.getQ(this.yes, 'yes')
+    check (event) {
+      if (event) event.preventDefault()
+      console.log(this)
+      /*
+      for (var i = questions.length - 1; i >= 0; i--) {
+        if (this.picked === 'yes') {
+          console.log(questions[i].yes)
+        }
+        if (this.picked === 'no') {
+          console.log(questions[i].no)
+        }
       }
-      if (val === 'no') {
-        this.getQ(this.no, 'no')
-      }
+      */
+    },
+    getQ () {}
+    /*
+    get (params) {
+      console.log(this.$route)
+      const uri = this.$route.params.id
+      return axios.get(`https://nhm.org/nature/map/map/searchobservations?params[project_id]=` + uri)
+      .then((res) => {
+        this.arr = res.data
+      })
     }
+    */
   },
-  created () {}
+  created () {
+    this.check()
+  }
 }
 </script>
 
