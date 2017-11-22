@@ -4,14 +4,13 @@
   <article class="container">
       <section>
         <form>
-          <fieldset>
+          <fieldset v-bind:class="{ 'hide': this.isActive }">
             <div>
               <h2>{{question}}</h2>
-              <input id="toggle-on" name="toggle" type="radio" value="yes" v-model="picked">
+              <input  id="toggle-on" name="toggle" type="radio" value="yes" v-model="radio">
               <label for="toggle-on">Yes</label>
-              <input id="toggle-off" name="toggle" type="radio" value="no" v-model="picked">
+              <input id="toggle-off" name="toggle" type="radio" value="no" v-model="radio">
               <label for="toggle-off">No</label>
-              {{picked}}
             </div>
           </fieldset>
         </form>
@@ -29,25 +28,31 @@ export default {
   data () {
     return {
       arr: questions,
-      picked: null,
+      radio: null,
       question: questions[0].question,
       yes: questions[0].yes,
       no: questions[0].no,
-      answers: []
+      answers: [],
+      isActive: false
     }
   },
   methods: {
     getQ (id, answer) {
+      if (questions[id].yes === 'done' || questions[id].no === 'done') {
+        this.question = 'done'
+        this.isActive = true
+        this.radio = null
+        return this.question
+      }
       this.yes = questions[id].yes
       this.no = questions[id].no
       this.question = questions[id].question
-      this.picked = null
+      this.radio = null
       this.answers.push(answer)
     }
   },
   watch: {
-    'picked': function (val) {
-      console.log(this.answers)
+    'radio': function (val) {
       if (val === 'yes') {
         this.getQ(this.yes, 'yes')
       }
@@ -55,8 +60,7 @@ export default {
         this.getQ(this.no, 'no')
       }
     }
-  },
-  created () {}
+  }
 }
 </script>
 
@@ -93,6 +97,15 @@ $article-phone: (
       }
 
       form {
+
+        .hide {
+          div {
+            label {
+              display: none;
+            }
+          }
+        }
+
         fieldset {
               border: 0;
               outline: none;
