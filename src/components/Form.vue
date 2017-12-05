@@ -25,17 +25,64 @@ import questions from '../assets/data/questions.json'
 
 export default {
   name: 'Form',
+  props: {
+    arr: {
+      default: function () {
+        return questions
+      },
+      type: Array
+    },
+    radio: {
+      default: function () {
+        return null
+      },
+      type: Array
+    },
+    question: {
+      default: function () {
+        return questions[0].question
+      },
+      type: Array
+    },
+    yes: {
+      default: function () {
+        return questions[0].yes
+      },
+      type: Array
+    },
+    no: {
+      default: function () {
+        return questions[0].no
+      },
+      type: Array
+    },
+    answers: {
+      default: function () {
+        return []
+      },
+      type: Array
+    },
+    isActive: {
+      default: function () {
+        return false
+      },
+      type: Boolean
+    },
+    animated: {
+      default: function () {
+        return false
+      },
+      type: Boolean
+    },
+    show: {
+      default: function () {
+        return true
+      },
+      type: Boolean
+    }
+  },
   data () {
     return {
-      arr: questions,
-      radio: null,
-      question: questions[0].question,
-      yes: questions[0].yes,
-      no: questions[0].no,
-      answers: [],
-      isActive: false,
-      animated: false,
-      show: true
     }
   },
   methods: {
