@@ -1,0 +1,369 @@
+/* global screenReaderText */
+/**
+ * Theme functions file.
+ *
+ * Contains handlers for navigation and widget area.
+ */
+
+( function( $ ) {
+	var body, masthead, menuToggle, siteNavigation, socialNavigation, siteHeaderMenu, resizeTimer;
+
+	function initMainNavigation( container ) {
+
+		// Add dropdown toggle that displays child menu items.
+		var dropdownToggle = $( '<button />', {
+			'class': 'dropdown-toggle',
+			'aria-expanded': false,
+			'aria-hidden': false
+		} ).append( $( '<span />', {
+			'class': 'screen-reader-text',
+			text: screenReaderText.expand
+		} ) );
+
+		container.find( '.menu-item-has-children > a' ).after( dropdownToggle );
+
+		// Toggle buttons and submenu items with active children menu items.
+		container.find( '.current-menu-ancestor > button' ).addClass( 'toggled-on' );
+		container.find( '.current-menu-ancestor > .sub-menu' ).addClass( 'toggled-on' );
+
+		// Add menu items with submenus to aria-haspopup="true".
+		container.find( '.menu-item-has-children' ).attr( 'aria-haspopup', 'true' );
+
+		container.find( '.dropdown-toggle' ).click( function( e ) {
+			var _this            = $( this ),
+				screenReaderSpan = _this.find( '.screen-reader-text' );
+
+			e.preventDefault();
+			_this.toggleClass( 'toggled-on' );
+			_this.next( '.children, .sub-menu' ).toggleClass( 'toggled-on' );
+
+			// jscs:disable
+			_this.attr( 'aria-expanded', _this.attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			// jscs:enable
+			screenReaderSpan.text( screenReaderSpan.text() === screenReaderText.expand ? screenReaderText.collapse : screenReaderText.expand );
+		} );
+	}
+	initMainNavigation( $( '.main-navigation' ) );
+
+	masthead         = $( '#masthead' );
+	menuToggle       = masthead.find( '#menu-toggle' );
+	siteHeaderMenu   = masthead.find( '#site-header-menu' );
+	siteNavigation   = masthead.find( '#site-navigation' );
+	socialNavigation = masthead.find( '#social-navigation' );
+
+	// Enable menuToggle.
+	( function() {
+
+		// Return early if menuToggle is missing.
+		if ( ! menuToggle.length ) {
+			return;
+		}
+
+		// Add an initial values for the attribute.
+		menuToggle.add( siteNavigation ).add( socialNavigation ).attr( 'aria-expanded', 'false' );
+
+		menuToggle.on( 'click.twentysixteen', function() {
+			$( this ).add( siteHeaderMenu ).toggleClass( 'toggled-on' );
+
+			// jscs:disable
+			$( this ).add( siteNavigation ).add( socialNavigation ).attr( 'aria-expanded', $( this ).add( siteNavigation ).add( socialNavigation ).attr( 'aria-expanded' ) === 'false' ? 'true' : 'false' );
+			// jscs:enable
+		} );
+	} )();
+
+	// Fix sub-menus for touch devices and better focus for hidden submenu items for accessibility.
+	( function() {
+		if ( ! siteNavigation.length || ! siteNavigation.children().length ) {
+			return;
+		}
+
+		// Toggle `focus` class to allow submenu access on tablets.
+		function toggleFocusClassTouchScreen() {
+			if ( window.innerWidth >= 910 ) {
+				$( document.body ).on( 'touchstart.twentysixteen', function( e ) {
+					if ( ! $( e.target ).closest( '.main-navigation li' ).length ) {
+						$( '.main-navigation li' ).removeClass( 'focus' );
+					}
+				} );
+				siteNavigation.find( '.menu-item-has-children > a' ).on( 'touchstart.twentysixteen', function( e ) {
+					var el = $( this ).parent( 'li' );
+
+					if ( ! el.hasClass( 'focus' ) ) {
+						e.preventDefault();
+						el.toggleClass( 'focus' );
+						el.siblings( '.focus' ).removeClass( 'focus' );
+					}
+				} );
+			} else {
+				siteNavigation.find( '.menu-item-has-children > a' ).unbind( 'touchstart.twentysixteen' );
+			}
+		}
+
+		if ( 'ontouchstart' in window ) {
+			$( window ).on( 'resize.twentysixteen', toggleFocusClassTouchScreen );
+			toggleFocusClassTouchScreen();
+		}
+
+		siteNavigation.find( 'a' ).on( 'focus.twentysixteen blur.twentysixteen', function() {
+			$( this ).parents( '.menu-item' ).toggleClass( 'focus' );
+		} );
+	} )();
+
+	// Add the default ARIA attributes for the menu toggle and the navigations.
+	function onResizeARIA() {
+		if ( window.innerWidth < 910 ) {
+			if ( menuToggle.hasClass( 'toggled-on' ) ) {
+				menuToggle.attr( 'aria-expanded', 'true' );
+			} else {
+				menuToggle.attr( 'aria-expanded', 'false' );
+			}
+
+			if ( siteHeaderMenu.hasClass( 'toggled-on' ) ) {
+				siteNavigation.attr( 'aria-expanded', 'true' );
+				socialNavigation.attr( 'aria-expanded', 'true' );
+			} else {
+				siteNavigation.attr( 'aria-expanded', 'false' );
+				socialNavigation.attr( 'aria-expanded', 'false' );
+			}
+
+			menuToggle.attr( 'aria-controls', 'site-navigation social-navigation' );
+		} else {
+			menuToggle.removeAttr( 'aria-expanded' );
+			siteNavigation.removeAttr( 'aria-expanded' );
+			socialNavigation.removeAttr( 'aria-expanded' );
+			menuToggle.removeAttr( 'aria-controls' );
+		}
+	}
+
+	// Add 'below-entry-meta' class to elements.
+	function belowEntryMetaClass( param ) {
+		if ( body.hasClass( 'page' ) || body.hasClass( 'search' ) || body.hasClass( 'single-attachment' ) || body.hasClass( 'error404' ) ) {
+			return;
+		}
+
+		$( '.entry-content' ).find( param ).each( function() {
+			var element              = $( this ),
+				elementPos           = element.offset(),
+				elementPosTop        = elementPos.top,
+				entryFooter          = element.closest( 'article' ).find( '.entry-footer' ),
+				entryFooterPos       = entryFooter.offset(),
+				entryFooterPosBottom = entryFooterPos.top + ( entryFooter.height() + 28 ),
+				caption              = element.closest( 'figure' ),
+				newImg;
+
+			// Add 'below-entry-meta' to elements below the entry meta.
+			if ( elementPosTop > entryFooterPosBottom ) {
+
+				// Check if full-size images and captions are larger than or equal to 840px.
+				if ( 'img.size-full' === param ) {
+
+					// Create an image to find native image width of resized images (i.e. max-width: 100%).
+					newImg = new Image();
+					newImg.src = element.attr( 'src' );
+
+					$( newImg ).load( function() {
+						if ( newImg.width >= 840  ) {
+							element.addClass( 'below-entry-meta' );
+
+							if ( caption.hasClass( 'wp-caption' ) ) {
+								caption.addClass( 'below-entry-meta' );
+								caption.removeAttr( 'style' );
+							}
+						}
+					} );
+				} else {
+					element.addClass( 'below-entry-meta' );
+				}
+			} else {
+				element.removeClass( 'below-entry-meta' );
+				caption.removeClass( 'below-entry-meta' );
+			}
+		} );
+	}
+
+	$( document ).ready( function() {
+		body = $( document.body );
+
+		$( window )
+			.on( 'load.twentysixteen', onResizeARIA )
+			.on( 'resize.twentysixteen', function() {
+				clearTimeout( resizeTimer );
+				resizeTimer = setTimeout( function() {
+					belowEntryMetaClass( 'img.size-full' );
+					belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
+				}, 300 );
+				onResizeARIA();
+			} );
+
+		belowEntryMetaClass( 'img.size-full' );
+		belowEntryMetaClass( 'blockquote.alignleft, blockquote.alignright' );
+	} );
+	
+	$(document).on('click', '.sl-button', function() {
+		var button = $(this);
+		var post_id = button.attr('data-post-id');
+		var security = button.attr('data-nonce');
+		var iscomment = button.attr('data-iscomment');
+		var allbuttons;
+		if ( iscomment === '1' ) { /* Comments can have same id */
+			allbuttons = $('.sl-comment-button-'+post_id);
+		} else {
+			allbuttons = $('.sl-button-'+post_id);
+		}
+		var loader = allbuttons.next('#sl-loader');
+		if (post_id !== '') {
+			$.ajax({
+				type: 'POST',
+				url: simpleLikes.ajaxurl,
+				data : {
+					action : 'process_simple_like',
+					post_id : post_id,
+					nonce : security,
+					is_comment : iscomment,
+				},
+				beforeSend:function(){
+					loader.html('&nbsp;<div class="loader">Loading...</div>');
+				},	
+				success: function(response){
+					var icon = response.icon;
+					var count = response.count;
+					allbuttons.html(icon+count);
+					if(response.status === 'unliked') {
+						var like_text = simpleLikes.like;
+						allbuttons.prop('title', like_text);
+						allbuttons.removeClass('liked');
+					} else {
+						var unlike_text = simpleLikes.unlike;
+						allbuttons.prop('title', unlike_text);
+						allbuttons.addClass('liked');
+					}
+					loader.empty();					
+				}
+			});
+			
+		}
+		return false;
+	});
+	$('li.no-click').children('a').removeAttr( "href" ).addClass('no-window');
+	
+	$('ul.sub-menu').attr('title', 'Sub Menu');
+	$('button#menu-toggle').attr('title', 'Open Mobile Menu');
+	$('button.dropdown-toggle').attr('title', 'Open Sub Menu on Mobile');
+	$('a.email-share').attr('title', 'Share by Email');
+	$('a.sl-button').attr('title', 'Click to Like this Post');
+	$('a.tweet-share').attr('title', 'Share on Twitter');
+	$('a.li-share').attr('title', 'Share on Linked In');
+	$('a.fb-share').attr('title', 'Share on Facebook');
+	$('a.nextpostslink').attr('aria-label', 'Next Page');
+	$('a.previouspostslink').attr('aria-label', 'Previous Page');
+	$('a.last').attr('aria-label', 'Last Page');
+	$('a.first').attr('aria-label', 'First Page');
+	
+	var linkRewriter = function(a, b) {
+    $('a[href*="' + a + '"]').each(function() {
+        $(this).attr('href', $(this).attr('href').replace(a, b));
+    });
+	};
+	linkRewriter('dev.legalaidatwork.org', 'legalaidatwork.org');
+	
+	
+	
+	
+	$(window).bind("load", function() {
+	
+	
+	var divs = $(".video");
+	for(var i = 0; i < divs.length; i+=3) {
+  	divs.slice(i, i+3).wrapAll("<div class='video-row'></div>");
+	}
+	$(".video-row").each(function() {
+    var numImages = $(this).children(".video").length;
+	$(this).addClass('video-'+numImages);
+	});
+
+	
+	var partner = $("li.partner.small");
+	for(var i = 0; i < partner.length; i+=3) {
+  	partner.slice(i, i+3).wrapAll("<div class='new-small-row'></div>");
+	}
+	$(".new-small-row").each(function() {
+    var numBlocks = $(this).children("li.partner.small").length;
+	$(this).addClass('partner-'+numBlocks);
+	});
+	
+	
+	$('.flex-blocks.three').each(function(){
+	var block3 = $(".flex-block.three");
+	for(var i = 0; i < block3.length; i+=3) {
+  	block3.slice(i, i+3).wrapAll("<div class='flex-block-row'></div>");
+	}
+	$(".flex-block-row").each(function() {
+    var numBlocks3 = $(this).children(".flex-block.three").length;
+	$(this).addClass('partner-'+numBlocks3);
+	});
+	});
+	
+		$('.flex-blocks.two').each(function(){
+	var block2 = $(".flex-block.two");
+	for(var i = 0; i < block2.length; i+=2) {
+  	block2.slice(i, i+2).wrapAll("<div class='flex-block-row-two'></div>");
+	}
+	$(".flex-block-row-two").each(function() {
+    var numBlocks2 = $(this).children(".flex-block.two").length;
+	$(this).addClass('partner-'+numBlocks2);
+	});
+	});
+	
+	
+	
+	});
+	
+	
+	$('a:not(.no-window,.open-btn,.clinic)').each(function() {
+   	var a = new RegExp('/' + window.location.host + '/');
+   	if(!a.test(this.href)) {
+       $(this).click(function(event) {
+           event.preventDefault();
+           event.stopPropagation();
+           window.open(this.href, '_blank');
+       });
+   	}
+	});
+	
+	if ( $('.resource').length > 0 ) {
+	$('.resource').each(function(){
+	var resourceurl = $(this).children('.resource-content').children('.button').attr('href');
+	$(this).click(function(){
+	//window.location.href = resourceurl;
+	window.open(resourceurl, '_blank');
+	});
+	//console.log(resourceurl);
+	});
+	}
+
+	
+	$(function() {
+    $('a[href$=".pdf"]').prop('target', '_blank');
+	});
+
+	$(function() {
+    $('a[href$=".doc"]').prop('target', '_blank');
+	});
+	
+	if ( $( "div#fs-disclaimer" ).length ) {
+	var replaced = $("div#fs-disclaimer").html().replace('the Legal Aid Society–Employment Law Center','Legal Aid at Work');
+	$("div#fs-disclaimer").html(replaced);
+	}
+	
+	var trans = $('p.qtranxs-available-languages-message');
+	$('h1').first().append(trans);
+	
+	
+	//$('p.qtranxs-available-languages-message').html($('p.qtranxs-available-languages-message').html().replace('For the sake of viewer convenience, the content is shown below in the alternative language. You may click the link to switch the active language.', ''))
+	//$('p.qtranxs-available-languages-message').html($('p.qtranxs-available-languages-message').html().replace(' estadounidense', ''))
+	
+	$(window).bind('load',function(){
+	$('.video-wrapper').addClass('loaded');
+	});
+
+} )( jQuery );

@@ -1,0 +1,163 @@
+body {
+	font:14px/18px "proxima-nova",sans-serif;
+	color:#646365;
+}
+#content h1+h2 {
+	margin-top:25px;
+	padding-bottom:0;
+	border-bottom:none;
+	font-weight:bold;
+}
+a {
+	color:#33808e;
+}
+a:hover {
+	color:#e5831a;
+}
+p.instructions {
+	font-size:1.1em;
+	color:#777;
+}
+#tree-window {
+	margin: 25px 0;
+	padding-bottom:15px;
+	width:530px;
+ 	height: 1000px;
+	overflow: hidden;
+}
+#tree-slider {
+	margin: 0;
+	padding: 0;
+	height: 1000px;
+	width: 2000px;
+}
+.tree-content-box {
+	position:relative;
+/* 	margin-top: 25px; */
+	float: left;
+	width: 530px;
+	font-size:1em;
+	line-height:1.4em;
+}
+.decision-links {
+	position:relative;
+	left:15px;
+	float:left;
+	margin-top: 1em;
+	font-size: 0.92em;
+	line-height:1em;
+	text-align:center;
+	text-transform:uppercase;
+	z-index:2;
+}
+.decision-links a {
+	float:left;
+	padding:8px 12px;
+ 	color:#e5831a;
+	border-radius:4px;
+	background-color:#fff;
+}
+.decision-links a:hover {
+	background-color:#e3e3e3;
+}
+.decision-links a:first-child  {
+ margin-right: 1em;
+}
+.question,
+.answer,
+div.download {
+	-moz-border-radius:7px;
+	-webkit-border-radius:7px;
+	border-radius:7px;
+}
+div.download,
+.question {
+	position:relative;
+	font-size:1.3em;
+	line-height:1.4em;
+	color:#fff;
+}
+.question {
+	padding:45px 15px 50px;
+	margin-bottom:-55px;
+	background-color:#e5831a;
+}
+div.download {
+	padding:40px 15px 10px;
+	margin:20px 0 10px;
+	font-size:1em;
+	background-color:#33808e;
+}
+.download p.documentation {
+	margin-bottom:20px;
+	font-weight:bold;
+}
+.download a {
+	display:inline-block;
+	width:85%;
+	padding:15px 10px 5px 45px;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border-radius:5px;
+	color:#fff;
+	text-decoration:none;
+ 	background:#5297a3 url(../img/gavel.png) no-repeat 10px 6px;
+}
+.download p.timeline a {
+	background:#5297a3 url(../img/calendar.png) no-repeat 10px 10px;
+}
+.download a:hover,
+.download p.timeline a:hover {
+	background-color:#256b78
+}
+/* .answer {
+	position:relative;
+	padding: 35px 15px 15px;
+	border:1px solid #d9d9d9;
+	background:#f9f9f9 url(../img/gavel.png) no-repeat 15px 10px;
+} */
+.question:after,
+div.download:after {
+	position:absolute;
+	left:15px;
+	top:15px;
+	width:94%;
+	padding-bottom:3px;
+	border-bottom:1px solid #e5831a;
+	line-height:1em;
+	color:#e5831a;
+	text-transform:uppercase;
+}
+/* .answer:after {
+	padding-left:30px;
+	font-size:1em;
+	color:#e5831a;
+	text-transform:uppercase;
+} */
+.question:after {
+	content:"Question";
+}
+div.download:after {
+	content:"Your rights";
+}
+.question:after,
+div.download:after {
+	position:absolute;
+	font-size:16px;
+	text-transform:uppercase;
+	color:#e5831a;
+	color:#fff;
+	border-bottom:1px solid #e5831a;
+	border-bottom:1px solid #fff;
+}
+.back-link {
+	position:absolute;
+	left:0;
+	bottom:-40px;
+	display: block;
+	margin-top: 5em;
+	font-size: .86em;
+	text-transform:uppercase;
+	border: none;
+}
+

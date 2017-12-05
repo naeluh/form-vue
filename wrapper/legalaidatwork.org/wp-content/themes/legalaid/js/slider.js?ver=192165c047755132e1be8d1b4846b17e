@@ -1,0 +1,8 @@
+jQuery(document).ready(function($) {
+  $('#header-images').flexslider({
+    animation: "slide",
+    directionNav: false,
+    slideshow: false,
+    controlNav: true
+  });
+});

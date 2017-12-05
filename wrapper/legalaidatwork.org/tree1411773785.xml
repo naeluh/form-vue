@@ -1,0 +1,621 @@
+<?xml version="1.0"?>
+<tree>
+
+<title>I&#x2019;m Pregnant</title>
+
+<description></description>
+
+
+<branch id="1.1">
+<content>
+&lt;p class="question"&gt;Does your employer have at least 50 employees within 75 miles?&lt;/p&gt;&#xD;
+</content>
+<fork target="1.1.1">Yes</fork><fork target="1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.2">
+<content>
+&lt;p class="question"&gt;Do you pay into State Disability Insurance (SDI)?&lt;/p&gt;&#xD;
+</content>
+<fork target="1.2.1">Yes</fork><fork target="1.2.2">No</fork>
+</branch>
+
+
+<branch id="1">
+<content>
+&lt;p class="question"&gt;Do you work in California for an employer with at least 5 employees?&lt;/p&gt;</content>
+<fork target="1.1">Yes</fork><fork target="1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1">
+<content>
+&lt;p class="question"&gt;Have you worked for your employer for at least 1 year?&lt;/p&gt;</content>
+<fork target="1.1.1.1">Yes</fork><fork target="1.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.2">
+<content>
+&lt;p class="question"&gt;Do you pay into State Disability Insurance (SDI)?&lt;/p&gt;&#xD;
+</content>
+<fork target="1.1.2.1">Yes</fork><fork target="1.1.2.2">No</fork>
+</branch>
+
+
+<branch id="1.2.1">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.2.1.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.2.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1">
+<content>
+&lt;p class="question"&gt;Have you worked at least 1250 hours in the year before your leave will start?&lt;/p&gt;</content>
+<fork target="1.1.1.1.1">Yes</fork><fork target="1.1.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.2">
+<content>
+&lt;p class="question"&gt;Do you pay into State Disability Insurance (SDI)?&lt;/p&gt;</content>
+<fork target="1.1.1.2.1">Yes</fork><fork target="1.1.1.2.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.2.1">
+<content>
+&lt;p class="question"&gt;Do you currently work in San Francisco?&lt;/p&gt;</content>
+<fork target="1.1.1.2.1.1">Yes</fork><fork target="1.1.1.2.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.2.2">
+<content>
+&lt;p class="question"&gt;Do you currently work in San Francisco?&lt;/p&gt;</content>
+<fork target="1.1.1.2.2.1">Yes</fork><fork target="1.1.1.2.2.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.1">
+<content>
+&lt;p class="question"&gt;Do you pay into State Disability Insurance (SDI)?&lt;/p&gt;&#xD;
+</content>
+<fork target="1.1.1.1.1.1">Yes</fork><fork target="1.1.1.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.2">
+<content>
+&lt;p class="question"&gt;Do you pay into State Disability Insurance (SDI)?&lt;/p&gt;&#xD;
+</content>
+<fork target="1.1.1.1.2.1">Yes</fork><fork target="1.1.1.1.2.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.1.1">
+<content>
+&lt;p class="question"&gt;Do you currently work in San Francisco?&lt;/p&gt;&#xD;
+</content>
+<fork target="1.1.1.1.1.1.1">Yes</fork><fork target="1.1.1.1.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.1.2">
+<content>
+&lt;p class="question"&gt;Do you currently work in San Francisco?&lt;/p&gt;&#xD;
+</content>
+<fork target="1.1.1.1.1.2.1">Yes</fork><fork target="1.1.1.1.1.2.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.2.1">
+<content>
+&lt;p class="question"&gt;Do you currently work in San Francisco?&lt;/p&gt;&#xD;
+</content>
+<fork target="1.1.1.1.2.1.1">Yes</fork><fork target="1.1.1.1.2.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.2.2">
+<content>
+&lt;p class="question"&gt;Do you currently work in San Francisco?&lt;/p&gt;&#xD;
+</content>
+<fork target="1.1.1.1.2.2.1">Yes</fork><fork target="1.1.1.1.2.2.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.1.1.1">
+<content>
+&lt;p class="question"&gt;Have you worked in San Francisco for the past six months?&lt;/p&gt;</content>
+<fork target="1.1.1.1.1.1.1.1">Yes</fork><fork target="1.1.1.1.1.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-FMLA-CFRA-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for FMLA/CFRA and SDI/PFL&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.1.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.1.2.1">
+<content>
+&lt;p class="question"&gt;Have you worked in San Francisco for the past six months?&lt;/p&gt;</content>
+<fork target="1.1.1.1.1.2.1.1">Yes</fork><fork target="1.1.1.1.1.2.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.1.2.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for FMLA/CFRA but not SDI/PFL&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.1.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.1.1.1.1">
+<content>
+&lt;p class="question"&gt;Does your employer have at least 20 employees?&lt;/p&gt;</content>
+<fork target="1.1.1.1.1.1.1.1.1">Yes</fork><fork target="1.1.1.1.1.1.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.1.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-FMLA-CFRA-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for FMLA/CFRA and SDI/PFL&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.1.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.1.1.1.1.1">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-FMLA-CFRA-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for FMLA/CFRA and SDI/PFL&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.1.1.1.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.1.1.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-FMLA-CFRA-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for FMLA/CFRA and SDI/PFL&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.1.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.1.2.1.1">
+<content>
+&lt;p class="question"&gt;Does your employer have at least 20 employees?&lt;/p&gt;</content>
+<fork target="1.1.1.1.1.2.1.1.1">Yes</fork><fork target="1.1.1.1.1.2.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.1.2.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for FMLA/CFRA but not SDI/PFL&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.1.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.1.2.1.1.1">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for FMLA/CFRA but not SDI/PFL&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.1.2.1.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.1.2.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for FMLA/CFRA but not SDI/PFL&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.1.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.2.1.1">
+<content>
+&lt;p class="question"&gt;Have you worked in San Francisco for the past six months?&lt;/p&gt;</content>
+<fork target="1.1.1.1.2.1.1.1">Yes</fork><fork target="1.1.1.1.2.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.2.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.2.2.1">
+<content>
+&lt;p class="question"&gt;Have you worked in San Francisco for the past six months?&lt;/p&gt;</content>
+<fork target="1.1.1.1.2.2.1.1">Yes</fork><fork target="1.1.1.1.2.2.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.2.2.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.2.1.1.1">
+<content>
+&lt;p class="question"&gt;Does your employer have at least 20 employees?&lt;/p&gt;</content>
+<fork target="1.1.1.1.2.1.1.1.1">Yes</fork><fork target="1.1.1.1.2.1.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.2.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.2.1.1.1.1">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.1.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.2.1.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.2.2.1.1">
+<content>
+&lt;p class="question"&gt;Does your employer have at least 20 employees?&lt;/p&gt;</content>
+<fork target="1.1.1.1.2.2.1.1.1">Yes</fork><fork target="1.1.1.1.2.2.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.1.2.2.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.2.2.1.1.1">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.1.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.1.2.2.1.1.2">
+<content>
+&lt;div class="download"&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.2.1">
+<content>
+&lt;p class="question"&gt;Do you currently work in San Francisco?&lt;/p&gt;&#xD;
+</content>
+<fork target="1.1.2.1.1">Yes</fork><fork target="1.1.2.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.2.2">
+<content>
+&lt;p class="question"&gt;Do you currently work in San Francisco?&lt;/p&gt;&#xD;
+</content>
+<fork target="1.1.2.2.1">Yes</fork><fork target="1.1.2.2.2">No</fork>
+</branch>
+
+
+<branch id="1.1.2.2.1">
+<content>
+&lt;p class="question"&gt;Have you worked in San Francisco for the past six months?&lt;/p&gt;</content>
+<fork target="1.1.2.2.1.1">Yes</fork><fork target="1.1.2.2.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.2.2.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.2.1.1">
+<content>
+&lt;p class="question"&gt;Have you worked in San Francisco for the past six months?&lt;/p&gt;</content>
+<fork target="1.1.2.1.1.1">Yes</fork><fork target="1.1.2.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.2.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.2.2.1">
+<content>
+&lt;p class="question"&gt;Have you worked in San Francisco for the past six months?&lt;/p&gt;</content>
+<fork target="1.1.1.2.2.1.1">Yes</fork><fork target="1.1.1.2.2.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.2.2.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.2.1.1">
+<content>
+&lt;p class="question"&gt;Have you worked in San Francisco for the past six months?&lt;/p&gt;</content>
+<fork target="1.1.1.2.1.1.1">Yes</fork><fork target="1.1.1.2.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.2.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.2.1.1.1">
+<content>
+&lt;p class="question"&gt;Does your employer have at least 20 employees?&lt;/p&gt;</content>
+<fork target="1.1.1.2.1.1.1.1">Yes</fork><fork target="1.1.1.2.1.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.2.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.2.2.1.1">
+<content>
+&lt;p class="question"&gt;Does your employer have at least 20 employees?&lt;/p&gt;</content>
+<fork target="1.1.1.2.2.1.1.1">Yes</fork><fork target="1.1.1.2.2.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.1.2.2.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.2.2.1.1">
+<content>
+&lt;p class="question"&gt;Does your employer have at least 20 employees?&lt;/p&gt;</content>
+<fork target="1.1.2.2.1.1.1">Yes</fork><fork target="1.1.2.2.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.2.2.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.2.2.1.1.1">
+<content>
+&lt;div class="download"&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.1.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.2.2.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.2.1.1.1.1">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.1.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.2.1.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.2.2.1.1.1">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.1.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.1.2.2.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-no-FMLA-CFRA-no-SDI-PFL.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for neither SDI/PFL or FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.2.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.2.1.1.1">
+<content>
+&lt;p class="question"&gt;Does your employer have at least 20 employees?&lt;/p&gt;</content>
+<fork target="1.1.2.1.1.1.1">Yes</fork><fork target="1.1.2.1.1.1.2">No</fork>
+</branch>
+
+
+<branch id="1.1.2.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.2.1.1.1.1">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.1.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+<branch id="1.1.2.1.1.1.2">
+<content>
+&lt;div class="download"&gt;
+	&lt;p class="documentation"&gt;Here is information about your legal rights based on the answers you have provided:&lt;/p&gt;
+  &lt;p class="download timeline"&gt;&lt;a href="timelines/Pregnancy-Timeline-SDI-PFL-no-FMLA-CFRA.pdf" title="Timeline will download, or open in a new tab or window" target="_blank"&gt;Timeline showing eligibility for SDI/PFL but not FMLA/CFRA&lt;/a&gt;&lt;/p&gt;&#xD;
+  &lt;p class="download"&gt;&lt;a href="documentation/pregnancy.1.2.1.2.pdf" title="Document will download, or open in a new tab or window" target="_blank"&gt;Summary and explanation of your legal rights&lt;/a&gt;&lt;/p&gt;&#xD;
+&lt;/div&gt;
+</content>
+</branch>
+
+
+</tree>

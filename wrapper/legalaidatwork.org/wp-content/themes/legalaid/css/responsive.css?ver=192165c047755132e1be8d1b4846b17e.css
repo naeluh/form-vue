@@ -1,0 +1,896 @@
+/**
+ * Media Queries
+ */
+
+/**
+ * Does the same thing as <meta name="viewport" content="width=device-width">,
+ * but in the future W3C standard way. -ms- prefix is required for IE10+ to
+ * render responsive styling in Windows 8 "snapped" views; IE10+ does not honor
+ * the meta tag. See https://core.trac.wordpress.org/ticket/25888.
+ */
+@-ms-viewport {
+	width: device-width;
+}
+
+@viewport {
+	width: device-width;
+}
+
+@media (max-width: 1024px) {
+
+	.tool, .partner, .highlight, .resource {
+    width: 48.54%;
+    }
+    div#calendar-container {
+    display: none;
+	}
+    .home-section .box {
+    width: 31%;
+    }
+    .home-section .blog-posts {
+    max-width: 100%;
+    }
+    .top-banner.bottom {
+    margin-left: -3vw;
+    }
+    footer .wrapper {
+    max-width: 88.566%!important;
+    }
+    ul#menu-footer-menu li {
+    max-width: 18.657vw;
+	}
+	ul#menu-footer-menu li a {
+    font-size: 15.13px;
+    }
+    site-info {
+    font-size: 13px;
+    }
+    .help-image {
+    background-size: cover!important;
+	}
+    .wrapper {
+    max-width: none;
+    }
+    div#fs-header-container {
+    max-width: 93%;
+    margin: 0 auto;
+	}
+	.bio-container.board-member {
+    min-width: 90%;
+	}
+	iframe#ytplayer {
+    width: 90%;
+    margin: 0 auto;
+	}
+	.support-icon-text > p {
+    clear: none !important;
+    font-size: 14px !important;
+    left: 0;
+    line-height: 1em !important;
+    padding-top: 5px;
+    position: relative;
+	}
+	.wpfc-calendar-wrapper {
+    max-width: 90%;
+	}
+	#san-francisco-clinic {
+    left: 2vw;
+    top: 175px;
+	}
+
+	#watsonville-clinic {
+    height: 70px;
+    left: 2vw;
+    padding-top: 10px;
+    top: 347px;
+	}
+
+	#san-diego-clinic {
+    height: 70px;
+    left: 2vw;
+    padding-top: 10px;
+    top: 466px;
+	}
+
+	#davis-sacramento-clinic {
+    height: 70px;
+    padding-top: 10px;
+    right: 2vw;
+    top: 253px;
+	}
+
+	#fresno-clinic {
+    height: 70px;
+    padding-top: 10px;
+    right: 2vw;
+    top: 340px;
+	}
+
+	#santa-ana-clinic {
+    height: 70px;
+    padding-top: 10px;
+    right: 2vw;
+    top: 427px;
+	}
+
+}
+
+@media (max-width: 768px) {
+	.tool, .partner, .highlight, .resource {
+    width: 100%;
+    margin-bottom: 2vw;
+	}
+	.fact-sheet, .letter-form, .resource-other, .diy {
+    width: 91%;
+    padding: 2vw;
+    }
+	.tool-content, .partner-content, .highlight-content, .resource-content {
+    margin: 2vw;
+    text-align: left;
+    float: right;
+    width: 65%;
+	}
+	.tool-img, .partner-img, .highlight-img, .resource-img {
+    float: left;
+    height: 100%;
+    width: 35%;
+	}
+	.footer-navigation ul.sub-menu {
+    display: block!important;
+	}
+	ul#menu-footer-menu {
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+	}
+	a.share img {
+    height: 16px;
+    }
+    .video-wrapper {
+    max-width: 100%;
+    }
+    .help-image {
+    background-size: cover!important;
+	}
+	.video {
+    background: #fff;
+    width: 32%;
+	}
+	.highlight-title {
+    font-size: 18px;
+    font-size: 2.4vw;
+	}
+	.resource-title {
+    font-size: 20px;
+    font-size: 2.6vw;
+	}
+	.main-navigation .sub-menu li.menu-item-has-children .sub-menu {
+    opacity: 1!important;
+	}
+	.blog-page .blog-post {
+    width: 49%;
+	}
+	.blog-page .blog-post:nth-of-type(3n+2) {
+    margin: 0;
+	}
+	.blog-page .blog-post:nth-of-type(2n+2) {
+    margin: 0 0 1.8vw 1.8vw;
+	}
+	
+	.footer-navigation {
+    display: none!important;
+	}
+	ul#menu-footer-menu li {
+    max-width: 25%;
+	}
+	div#staff-icons-container {
+    display: block;
+    overflow: hidden;
+    max-width: 73%;
+    text-align: center;
+	}
+	.staff-icons-single {
+    float: left;
+    width: 50%;
+    margin-bottom: 3vw;
+	}
+	.staff-icons-single > p {
+    width: 100%;
+	}	
+	.staff-icons-single:nth-last-of-type(1) {
+    width: 100%;
+	}
+	#staff-header {
+    margin: 0 auto;
+    max-width: 80%;
+    padding-bottom: 20px;
+	}
+	.bio-container.board-member {
+    min-width: 100%;
+	}
+	
+	.location-wrapper {
+    display: none;
+	}
+	#phone-clinic-chinese {
+    padding-left: 2vw;
+    width: 48%;
+	}
+	#phone-clinic-spanish {
+    padding-left: 4vw;
+    width: 48%;
+	}
+	.clinic-in-person-single {
+    padding-left: 4vw;
+    width: 48%;
+	}
+	
+	.clinic-in-person-single .support-icon-text > h2 {
+    left: 9px;
+	}
+	.disability-single {
+    padding-left: 60px;
+    padding-top: 40px;
+    width: 95%;
+	}
+	.disability-single .support-icon-text > h2 {
+    color: #657680;
+    left: 9px;
+    position: relative;
+	}
+	.wage-claim-single .support-icon-text > h2 {
+    color: #447489;
+    left: 9px;
+    position: relative;
+	}
+	.wage-claim-single {
+    padding-left: 60px;
+    padding-top: 40px;
+    width: 95%;
+	}
+	#locations-interior {
+    min-height: auto;
+    padding: 0;
+	}
+    .on-map-overlay {
+    display: none;
+	}
+	.clinic-overlay.show {
+    display: flex!important;
+    display: -webkit-flex!important;
+    display: -moz-flex!important;
+    height: 94%;
+    width: 95%;
+    left: 0;
+    right: 0;
+	}
+	.clinic-overlay-right {
+    float: right;
+    width: 54%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+	}
+	.overlay-x-icon {
+    right: 0px;
+	}
+	div#fs-main-container ul {
+    margin: 0;
+	}
+	.fs-fact.support-fact {
+    max-width: 90%;
+	}
+	#fs-header {
+    margin: 0 auto;
+    max-width: 100%;
+    padding-bottom: 20px;
+	}
+	#icon-container-1 .support-icon-text {
+    width: 100%;
+	}
+	#icon-container-2 .support-icon-text {
+    width: 100%;
+	}
+	.fs-fact.support-fact div#icon-container-2 {
+    padding-left: 0;
+	}
+	.fs-fact.support-fact div#icon-container-1 {
+    padding-left: 0;
+	}
+	.fs-fact.support-fact div#icon-container-1 {
+    width: 100%!important;
+    text-align: center;
+	}
+	.fs-fact.support-fact div#icon-container-2 {
+    width: 100%!important;
+	}
+	.fs-fact-top h1, .support-icon-text h2 {
+    padding-left: 0!important;
+	}	
+	.fs-fact.support-fact .support-icon-image {
+    display: none;
+	}
+	.fs-fact.support-fact .support-icon-text > p {
+    margin-left: 0;
+	}
+	#fs-main-container-left {
+    float: left;
+    width: 100%;
+    margin: 0 auto;
+	}
+	.fs-fact {
+    max-width: 90%;
+	}
+
+}
+
+@media (max-width: 736px) {
+	.home-section .box {
+    width: 49%;
+	}
+    .blog-page .post-top {
+        margin: 3vw;
+        font-size: 20px;
+        color: #657680;
+    }
+    .post-bottom a.email-share {
+        FONT-SIZE: 42PX;
+        DISPLAY: flex;
+        height: 100%;
+        display: flex;
+        display: -webkit-flex;
+        display: -moz-flex;
+        align-items: center;
+        color: #657680;
+    }
+    .columns, .flex-block-row, nav.bottom-menu {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+-0-flex-direction: column;
+	}
+	.column, .flex-block.three {
+    width: 100%;
+    text-align: left;
+	}
+	h2.block-title {
+    font-size: 6vw;
+	}
+    .page-template-page-support-us #fs-header {
+    max-width: 94%!important;
+	}
+	#fs-header > h1 {
+    font-size: 9vw;
+	}
+	.fs-fact-top {
+    clear: both;
+    color: #657680;
+    font-family: 'Catamaran';
+    font-size: 18px;
+    line-height: 1.3em;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: left;
+	}
+	.top-banner-text p {
+    font-size: 17px;
+	}
+	ul#menu-footer-menu li {
+    max-width: 50%;
+	}
+	.home-section .post-thumb img {
+    max-width: none;
+    width: 100%;
+    min-width: 100%;
+    min-height: auto;
+    height: auto!important;
+	}
+	#staff-header {
+    margin: 0 auto;
+    max-width: 90%;
+    padding-bottom: 20px;
+	}
+	.home-section a.share img {
+    height: 24px;
+	}
+	.home-section .more-news {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    max-width: 68.5%;
+    }
+    .home-section .more {
+    width: 29%;
+    }
+    .clinic-in-person-single {
+    padding-left: 4vw;
+    width: 100%;
+    padding-right: 4vw;
+	}
+	#locations-interior h3 {
+    text-align: left;
+    padding-left: 27px;
+    }
+    .wage-claim-single {
+    padding-left: 32px;
+    padding-top: 0;
+    width: 95%;
+	}
+	.disability-single {
+    padding-left: 34px;
+    padding-top: 0;
+    width: 95%;
+	}
+	.page-template-page-workers-rights-clinic div#ad-resources {
+    margin-top: 6vw;
+	}
+	a.share img {
+    height: 32px;
+	}
+	#content {
+    background-color: #f5f5f5;
+    width: 100%;
+    margin-top: 0!Important;
+	}
+	a.noslimstat {
+    font-size: 6vw!Important;
+	}
+	
+}
+
+@media (max-width: 414px) {
+	.blog-page .blog-post {
+    width: 100%;
+    margin-bottom: 5vw;
+	}
+	post {
+    width: 100%;
+    margin-left: 0!important;
+	}
+	.home-section .box {
+    width: 100%;
+	}
+	.box-image {
+    width: 100%;
+	}
+	.box-image img {
+    width: 100%;
+	}
+	.home-section .section-content p {
+    max-width: 90%;
+    }
+    .tool-img, .partner-img, .highlight-img, .resource-img {
+    float: left;
+    height: auto;
+    width: 100%;
+	}
+	.tool-title, .partner-title, .highlight-title, .resource-title {
+    font-size: 5.3vw;
+    }
+    .home-section .title-meta {
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+	}
+	.home-section .title-meta h2 {
+    max-width: 100%;
+	}
+	.home-section .post-content p {
+	width: 100%;
+	}
+	.home-section .post-content a.button {
+    font-size: 20px;
+    display: inline-block;
+    margin: 2vw 0;
+    padding: 3vw 5vw;
+	}
+	
+	.home-section a.share {
+    margin-right: 50px;
+    margin-right: 6.9vw;
+	}
+	.home-section .post-share {
+    margin: 3vw 0;
+	}
+	.home-section .post-thumb {
+    width: 100%;
+    float: left;
+    height: auto;
+    overflow: hidden;
+	}
+	.home-section .post-thumb img {
+    max-width: none;
+    width: auto;
+    min-width: auto;
+    min-height: auto;
+    height: auto!important;
+    width: 100%;
+	}
+	.home-section .post-content.has-thumb {
+    float: right;
+    width: 100%;
+	}
+	.home-section .post-content {
+    padding: 4vw;
+    }
+    .home-section .blog-post {
+	margin-bottom: 6vw;
+    }
+    .home-section .more-news {
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    max-width: 35.5%;
+	}
+	.home-section .more {
+    width: 100%;
+    margin-bottom: 5vw;
+    }
+    .home-section .blog-posts {
+    max-width: 100%;
+    margin-bottom: 8vw;
+	}
+    
+	.wrapper.news-wrapper {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-direction: column;
+	}
+	.single .news-left {
+    width: 100%;
+    order: 2;
+    -webkit-order: 2;
+    -moz-order: 2;
+	}
+	.news-right {
+    float: right;
+    width: 100%;
+    order: 1;
+    -webkit-order: 1;
+    -moz-order: 1;
+	}
+	.single .likes-views div {
+    margin-left: 20px;
+    margin-left: 5.6vw;
+    position: relative;
+	}
+	.single .view-num {
+    color: #849199;
+    font-size: 18px;
+    }
+    .single i.fa.fa-eye {
+    font-size: 27px;
+    margin-right: 1.4vw;
+	}
+	.single i.fa.fa-comment {
+    color: #447489;
+    font-size: 22px;
+    margin-right: 1.4vw;
+	}
+	.single .comment-num {
+    color: #447489;
+    font-size: 20px;
+	}
+    .single span.sl-count {
+    font-size: 15px!important;
+    }
+    .single .like-num .sl-icon svg {
+    fill: #849199;
+    width: 22px;
+    height: 18px;
+	}
+	.single .comment-num {
+    align-items: center;
+	}
+	.program-sect h1 {
+    font-size: 35px;
+    font-size: 5.8vw;
+	}
+	.video {
+    background: #fff;
+    width: 100%!important;
+    margin: 0 0 3vw 0!important;
+	}
+	.video-wrapper {
+    max-width: 100%;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+	}
+	.video iframe {
+    height: 180px!important;
+    height: 53vw!important;
+    margin: 0!important;
+	}
+	.video-title {
+    background: #fff;
+    text-align: left;
+    padding: 4vw 2vw;
+    line-height: 1.2;
+    color: #8e9ba2;
+    overflow: hidden;
+	}
+	.tool, .partner, .highlight, .resource {
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    margin-bottom: 5vw;
+	}
+	.tool-img img, .partner-img img, .highlight-img img, .resource-img img {
+    width: 100%;
+    height: auto;
+	}
+	.tool-content, .partner-content, .highlight-content, .resource-content {
+    margin: 4vw;
+    text-align: left;
+    float: right;
+    width: 100%;
+	}
+	.helpline-outer {
+    width: 420px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 4vw;
+	}
+	.fact-sheet-image, .letter-form-image, .diy-image, .resource-other-image {
+    display: none;
+	}
+	.tool, .partner, .highlight, .resource {
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+	}
+	.tool-img img, .partner-img img, .highlight-img img, .resource-img img {
+    height: auto;
+    width: 100%;
+    min-height: 0;
+	}
+	.tool-content, .partner-content, .highlight-content, .resource-content {
+    width: 100%;
+	}
+	.home-section .partner {
+    margin-bottom: 5vw;
+	}
+	.home-section .box-content {
+    height: auto;
+    overflow: hidden;
+    padding: 4vw 3vw;
+	}
+	.help-content {
+    font-size: 30px;
+    font-weight: 600;
+    font-size: 4.4vw;
+    height: auto;
+    }
+    .help-image {
+    width: 10%;
+    height: 7.2vw;
+    float: left;
+	}
+	.help-info {
+    font-size: 20px;
+    font-size: 3.6vw;
+    }
+    .staff-icons-single > p {
+    width: 100%;
+    padding-top: 0;
+	}
+	.staff-icons-single {
+    float: left;
+    width: 100%;
+    margin-bottom: 5vw;
+	}
+	.bio-container-left {
+    float: left;
+    height: auto;
+    width: 100%;
+	}	
+	.bio-container-right {
+    float: left;
+    text-align: center;
+    width: 98%;
+    padding: 2vw;
+	}
+	.bio-container-image > img {
+    overflow: hidden;
+    width: 100%;
+	}
+	.bio-title-left {
+    width: 100%;
+    padding: 0;
+	}
+	.bio-title-right {
+    float: left;
+	}
+	.bio-description {
+    padding: 0;
+	}
+	div#officers-container {
+    overflow: hidden;
+	}
+	.bio-container.board-member {
+    min-width: 100%;
+	}
+	.clinic-container #fs-header {
+    max-width: 100%;
+	}
+	iframe#ytplayer {
+    width: 90%;
+    margin: 0 auto;
+    height: 50vw;
+	}
+	.support-icon-container {
+    width: 95%!important;
+	}
+	.wage-claim-single {
+    padding-left: 4vw;
+    padding-top: 0;
+    width: 95%;
+	}
+	.disability-single {
+    padding-left: 4vw;
+    padding-top: 0;
+    width: 95%;
+	}
+	.clinic-overlay-right {
+    width: 97%;
+    order: 2;
+    -webkit-order: 2;
+    -moz-order: 2;
+	}
+	.clinic-overlay.show {
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+	}
+	.clinic-overlay-left {
+    float: left;
+    position: relative;
+    width: 100%;
+    height: 35%;
+	}
+	#income-guidelines-container > p {
+    color: #657680;
+    line-height: 1.3em;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    width: 95%;
+	}
+	#income-titles > div {
+    width: 100%;
+	}
+	table#income-box td {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1;
+	}
+	#clinic-video-container {
+    margin: 0 1vw;
+    text-align: center;
+	}
+	#clinic-video-container > h1 {
+    color: #274155;
+    font-family: 'Montserrat';
+    font-size: 26px;
+    }
+    #locations-interior hr {
+    clear: both;
+    margin: 40px auto 0;
+    width: 90%;
+    display: none;
+	}
+	h2.center-title.blog-page-title.news-blog {
+    text-align: center;
+    margin-bottom: 2vw;
+    color: #38899c;
+    line-height: 1;
+	}
+	.blog-page .blog-post:nth-of-type(3n+2) {
+    margin: 0 0 5vw 0;
+	}
+	#locations-interior > h2 {
+    color: #38899c;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    padding-bottom: 20px;
+    padding-left: 22px;
+    padding-top: 20px;
+    text-align: left;
+    line-height: 1;
+	}
+	#locations-interior h3 {
+    text-align: left;
+    padding-left: 27px;
+    line-height: 1;
+    margin-bottom: 7vw;
+	}
+	#income-guidelines-container {
+    margin: 0 5px;
+    padding-top: 60px;
+    text-align: center;
+	}
+	#income-guidelines-container > h1 {
+    padding-bottom: 20px;
+    line-height: 1;
+	}
+
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 763px) {
+	
+}
+ 
+/* Smartphones (landscape) ----------- */
+and (min-device-width : 320px)
+and (max-device-width : 763px) 
+and (orientation : landscape) {
+/* STYLES GO HERE */
+}
+ 
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 763px)
+and (orientation : portrait)
+/* STYLES GO HERE */
+}
+ 
+/* Tablets (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+	.site-header-menu {
+    display: none;
+    -webkit-flex: 0 1 100%;
+    -ms-flex: 0 1 100%;
+    flex: 0 1 100%;
+    margin: 0.875em 0;
+	}
+	.site-header-menu.toggled-on,
+	.no-js .site-header-menu {
+	display: block;
+	}
+	button#menu-toggle {
+    display: block;
+	}
+	.main-navigation li {
+	border-top: 1px solid #d1d1d1;
+	position: relative;
+	display: block;
+	}
+	.main-navigation .sub-menu li {
+	position: relative;
+	}
+	ul.sub-menu {
+    display: none!important;
+	}
+	.main-navigation ul .toggled-on {
+	display: block!important;
+	}
+	.dropdown-toggle {
+    display: block!important;
+	}
+}
+ 
+/* Tables (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+}
+ 
+/* Tablets (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+}
