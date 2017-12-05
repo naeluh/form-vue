@@ -3,7 +3,7 @@
   <header class="container"></header>
   <article class="container">
       <section>
-        <form v-bind:class="{'bounce animated': this.animated}">
+        <form v-bind:class="{'fadeInOut animated': this.animated}">
           <fieldset v-bind:class="{ 'hide': this.isActive }" >
             <div>
                 <h2>{{question}}</h2>
@@ -58,7 +58,7 @@ export default {
       self.animated = true
       setTimeout(function () {
         self.animated = false
-      }, 1000)
+      }, 500)
     }
   },
   watch: {
@@ -76,6 +76,30 @@ export default {
 
 <style lang="scss">
 @import "../assets/scss/main";
+
+@keyframes fadeInOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInOut {
+  animation-name: fadeInOut;
+}
+
+
 
 $dark_blue:#2f4c67;
 $med_blue:#4a7391;
@@ -108,10 +132,10 @@ $article-phone: (
 
       color: $dark_blue;
 
-      @include grid-column(8, $article);
+      //@include grid-column(8, $article);
 
       @include grid-media($article-phone) {
-          @include grid-column(12, $article);
+          //@include grid-column(12, $article);
       }
 
       form {
@@ -140,7 +164,7 @@ $article-phone: (
 
           label {
             padding: 10px 40px;
-            background-color: #fff;
+            background-color:transparent;
             color: $dark_blue;
             border: 5px solid $dark_blue;
             margin-right:10px;
