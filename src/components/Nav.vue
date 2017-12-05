@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 @import "../assets/scss/main";
 $nav: (columns: 12,gutter: 0);

@@ -3,11 +3,11 @@
   <header class="container"></header>
   <article class="container">
       <section>
-        <form>
-          <fieldset v-bind:class="{ 'hide': this.isActive }">
+        <form v-bind:class="{'bounce animated': this.animated}">
+          <fieldset v-bind:class="{ 'hide': this.isActive }" >
             <div>
-              <h2>{{question}}</h2>
-              <input  id="toggle-on" name="toggle" type="radio" value="yes" v-model="radio">
+                <h2>{{question}}</h2>
+              <input id="toggle-on" name="toggle" type="radio" value="yes" v-model="radio">
               <label for="toggle-on">Yes</label>
               <input id="toggle-off" name="toggle" type="radio" value="no" v-model="radio">
               <label for="toggle-off">No</label>
@@ -33,11 +33,14 @@ export default {
       yes: questions[0].yes,
       no: questions[0].no,
       answers: [],
-      isActive: false
+      isActive: false,
+      animated: false,
+      show: true
     }
   },
   methods: {
     getQ (id, answer) {
+      this.animate()
       if (questions[id].yes === 'done' || questions[id].no === 'done') {
         this.question = 'done'
         this.isActive = true
@@ -49,6 +52,13 @@ export default {
       this.question = questions[id].question
       this.radio = null
       this.answers.push(answer)
+    },
+    animate () {
+      let self = this
+      self.animated = true
+      setTimeout(function () {
+        self.animated = false
+      }, 1000)
     }
   },
   watch: {
@@ -64,8 +74,14 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "../assets/scss/main";
+
+$dark_blue:#2f4c67;
+$med_blue:#4a7391;
+$light_blue:#91b1c5;
+$orange:#f7b320;
+$off_white:#f5f5f5;
 
 $article: (
   columns: 12,
@@ -90,6 +106,8 @@ $article-phone: (
 
     section {
 
+      color: $dark_blue;
+
       @include grid-column(8, $article);
 
       @include grid-media($article-phone) {
@@ -107,10 +125,10 @@ $article-phone: (
         }
 
         fieldset {
-              border: 0;
+              border: 5px solid $dark_blue;
               outline: none;
               margin: 0 auto;
-              padding: 0;
+              padding: 2rem;
 
           p {
 
@@ -123,14 +141,15 @@ $article-phone: (
           label {
             padding: 10px 40px;
             background-color: #fff;
-            color:#000;
-            border: thin solid #000;
+            color: $dark_blue;
+            border: 5px solid $dark_blue;
             margin-right:10px;
             display: inline-block;
+            text-transform:uppercase;
           }
 
           input[type="radio"]:checked + label {
-              background-color: #000;
+              background-color: $dark_blue;
               cursor: default;
               color: #fff;
           }
