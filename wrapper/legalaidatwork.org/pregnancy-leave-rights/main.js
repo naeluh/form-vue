@@ -269,9 +269,23 @@ new Vue({
   props: {
     a: {
       default: function() {
-        return arrA
+        if (window.location.pathname === '/pregnancy-leave-rights/') {
+          return arrA
+        } else {
+          return arrB
+        }
       },
       type: Array
+    },
+    initMsg: {
+      default: function() {
+        if (window.location.pathname === '/pregnancy-leave-rights/') {
+          return 'I’m Pregnant:  What are my rights to time off from work?'
+        } else {
+          return ' '
+        }
+      },
+      type: String
     }
   },
   data() {

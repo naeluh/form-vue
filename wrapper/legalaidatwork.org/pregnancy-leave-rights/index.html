@@ -1325,14 +1325,26 @@
                     <header class="container"></header>
                     <article class="container">
                       <section v-bind:class="{ 'hide': this.start }">
-                        <a href="#" v-on:click="init">I’m Pregnant:  What are my rights to time off from work?</a>
+                        <a href="#" v-on:click="init">{{initMsg}}</a>
                       </section>
                       <section>
-                        <form>
+                        <form id="contact" action="" method="post">
                           <fieldset v-bind:class="{ 'hide': this.isActive }">
                             <div>
                               <div>
                                 <p v-if="" v-html="m" v-for="m in msg"></p>
+                              </div>
+                              
+                              <div v-bind:class="{ 'hide': !this.isDone }">
+                                <hr/>
+                                <p>Send or Download these important documents for later.</p>
+                                <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+                                <br/>
+                                <br/>
+                                <input placeholder="Your Email Address" type="email" tabindex="2" required>
+                                <br/>
+                                <br/>
+                                <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
                               </div>
                               <div v-bind:class="{ 'hide': this.isDone }">
                                 <input id="toggle-on" name="toggle" type="radio" value="yes" v-model="radio">
