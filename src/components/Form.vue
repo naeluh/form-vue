@@ -42,19 +42,19 @@ export default {
       default: function () {
         return questions[0].question
       },
-      type: Array
+      type: String
     },
     yes: {
       default: function () {
         return questions[0].yes
       },
-      type: Array
+      type: Number
     },
     no: {
       default: function () {
         return questions[0].no
       },
-      type: Array
+      type: Number
     },
     answers: {
       default: function () {

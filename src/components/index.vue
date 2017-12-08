@@ -1,47 +1,83 @@
 <template>
 <main id="main" role="main">
-  <header class="container"><h1>Tum mihi Piso: Quid ergo?</h1></header>
+  <header class="container"></header>
   <article class="container">
       <section>
-<h2>Tum mihi Piso: Quid ergo?</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Virtutibus igitur rectissime mihi videris et ad consuetudinem nostrae orationis vitia posuisse contraria. Aut haec tibi, Torquate, sunt vituperanda aut patrocinium voluptatis repudiandum. Duo Reges: constructio interrete. Mihi vero, inquit, placet agi subtilius et, ut ipse dixisti, pressius. Si autem id non concedatur, non continuo vita beata tollitur. Sed ego in hoc resisto; </p>
-
-<p>Apparet statim, quae sint officia, quae actiones. Quid est, quod ab ea absolvi et perfici debeat? Eaedem enim utilitates poterunt eas labefactare atque pervertere. Est, ut dicis, inquit; </p>
-
-<h2>Si longus, levis.</h2>
-
-<p>Si alia sentit, inquam, alia loquitur, numquam intellegam quid sentiat; Non dolere, inquam, istud quam vim habeat postea videro; Intrandum est igitur in rerum naturam et penitus quid ea postulet pervidendum; Illi enim inter se dissentiunt. Est autem etiam actio quaedam corporis, quae motus et status naturae congruentis tenet; Ita fit cum gravior, tum etiam splendidior oratio. </p>
-
-<h3>Placet igitur tibi, Cato, cum res sumpseris non concessas, ex illis efficere, quod velis?</h3>
-
-<p>Quam nemo umquam voluptatem appellavit, appellat; Quid enim me prohiberet Epicureum esse, si probarem, quae ille diceret? </p>
-
-<p>Et quidem, inquit, vehementer errat; Iam enim adesse poterit. Traditur, inquit, ab Epicuro ratio neglegendi doloris. An quod ita callida est, ut optime possit architectari voluptates? Ad eos igitur converte te, quaeso. Sed quid minus probandum quam esse aliquem beatum nec satis beatum? Itaque eos id agere, ut a se dolores, morbos, debilitates repellant. Idemne potest esse dies saepius, qui semel fuit? Quis non odit sordidos, vanos, leves, futtiles? </p>
-
-
+        <form v-bind:class="{'fadeInOut animated': this.animated}">
+          <fieldset v-bind:class="{ 'hide': this.isActive }" >
+            <div>
+              <h2>{{question}}</h2>
+              <router-link :to="this.yes.toString() + '?answer=yes'">Yes</router-link>
+              <router-link :to="this.no.toString() + '?answer=no'">No</router-link>
+            </div>
+          </fieldset>
+        </form>
       </section>
-      <aside>
-  <h3>Placet igitur tibi, Cato, cum res sumpseris non concessas, ex illis efficere, quod velis?</h3>
-
-<p>Quam nemo umquam voluptatem appellavit, appellat; Quid enim me prohiberet Epicureum esse, si probarem, quae ille diceret? </p>
-
-<p>Et quidem, inquit, vehementer errat; Iam enim adesse poterit. Traditur, inquit, ab Epicuro ratio neglegendi doloris. An quod ita callida est, ut optime possit architectari voluptates? Ad eos igitur converte te, quaeso. Sed quid minus probandum quam esse aliquem beatum nec satis beatum? Itaque eos id agere, ut a se dolores, morbos, debilitates repellant. Idemne potest esse dies saepius, qui semel fuit? Quis non odit sordidos, vanos, leves, futtiles? </p>      
-      </aside>
     </article>
   </main>
 </template>
 
 <script>
 /* import axios from 'axios' */
+import questions from '../assets/data/questions.json'
 
 export default {
   name: 'Index',
+  props: {
+    arr: {
+      default: function () {
+        return questions
+      },
+      type: Array
+    },
+    radio: {
+      default: function () {
+        return null
+      },
+      type: Array
+    },
+    show: {
+      default: function () {
+        return true
+      },
+      type: Boolean
+    }
+  },
   data () {
     return {
-      arr: []
+      question: questions[0].question,
+      yes: questions[0].yes,
+      no: questions[0].no,
+      animated: false,
+      isActive: false,
+      answers: []
     }
   },
   methods: {
+    getQ (id, answer) {
+      let self = this
+      console.log(questions[id].yes, questions[id].no)
+      self.animate()
+      if (questions[id].yes === 'done' || questions[id].no === 'done') {
+        self.question = 'done'
+        self.isActive = true
+        self.answers = []
+        return self.question
+      } else {
+        self.isActive = false
+        self.yes = questions[id].yes
+        self.no = questions[id].no
+        self.question = questions[id].question
+      }
+      self.answers.push(answer)
+    },
+    animate () {
+      let self = this
+      self.animated = true
+      setTimeout(function () {
+        self.animated = false
+      }, 500)
+    }
     /*
     get (params) {
       console.log(this.$route)
@@ -54,13 +90,54 @@ export default {
     */
   },
   created () {
-    /* this.get() */
+
+  },
+  watch: {
+    '$route': function (val) {
+      if (val.query.answer === 'yes') {
+        this.getQ(this.yes, 'yes')
+      }
+      if (val.query.answer === 'no') {
+        this.getQ(this.no, 'no')
+      }
+      console.log(val.query.answer, val.params.id)
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 @import "../assets/scss/main";
+
+@keyframes fadeInOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInOut {
+  animation-name: fadeInOut;
+}
+
+
+
+$dark_blue:#2f4c67;
+$med_blue:#4a7391;
+$light_blue:#91b1c5;
+$orange:#f7b320;
+$off_white:#f5f5f5;
 
 $article: (
   columns: 12,
@@ -84,10 +161,55 @@ $article-phone: (
     }
 
     section {
-      @include grid-column(8, $article);
+
+      color: $dark_blue;
+
+      //@include grid-column(8, $article);
 
       @include grid-media($article-phone) {
-          @include grid-column(12, $article);
+          //@include grid-column(12, $article);
+      }
+
+      form {
+
+        .hide {
+          div {
+            label,a {
+              display: none;
+            }
+          }
+        }
+
+        fieldset {
+              border: 5px solid $dark_blue;
+              outline: none;
+              margin: 0 auto;
+              padding: 2rem;
+
+          p {
+
+          }
+
+          input[type="radio"] {
+              display: none;
+          }
+
+          label,a {
+            padding: 10px 40px;
+            background-color:transparent;
+            color: $dark_blue;
+            border: 5px solid $dark_blue;
+            margin-right:10px;
+            display: inline-block;
+            text-transform:uppercase;
+          }
+
+          input[type="radio"]:checked + label {
+              background-color: $dark_blue;
+              cursor: default;
+              color: #fff;
+          }
+        }
       }
     }
 
